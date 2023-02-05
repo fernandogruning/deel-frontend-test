@@ -1,0 +1,90 @@
+*,
+*::before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --light-blue: #519af4;
+  --gray: #ccc;
+  --light-gray: #eee;
+  --orange: #f78400;
+  --text-gray: #2d2d2d;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  letter-spacing: 0.05rem;
+}
+
+.search-section {
+  width: 100%;
+  max-width: 48rem;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+}
+
+.autocomplete {
+  display: flex;
+  flex-direction: column;
+}
+
+.autocomplete .label {
+  font-size: 2rem;
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.autocomplete .search-input {
+  padding: 0.625rem;
+  color: var(--text-gray);
+  border-radius: 0.5rem;
+  border: 2px solid var(--gray);
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.autocomplete .search-input:focus {
+  outline: none;
+  border-color: var(--light-blue);
+}
+
+.autocomplete .suggestions-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid var(--gray);
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.autocomplete .suggestions-list .item {
+  width: 100%;
+  padding: 1.25rem 1rem;
+  color: var(--text-gray);
+}
+
+.autocomplete .suggestions-list .item.suggestion {
+  cursor: pointer;
+}
+
+.autocomplete .suggestions-list .item.suggestion:not(:last-of-type) {
+  border-bottom: 2px solid #eee;
+}
+
+.autocomplete .suggestions-list .item.suggestion:focus,
+.autocomplete .suggestions-list .item.suggestion:hover {
+  outline: none;
+  background-color: var(--light-blue);
+  border-bottom-color: var(--light-blue);
+  color: white;
+}
+
+.autocomplete .suggestions-list .item.suggestion .highlight {
+  color: var(--orange);
+  font-weight: 700;
+}
